@@ -15,21 +15,28 @@ import simplehttp.framework.http.enums.HttpMethod;
 import simplehttp.framework.http.enums.HttpStatus;
 import simplehttp.framework.http.enums.MediaType;
 
-@Controller(path = "/user/{userId}/")	
+@Controller(path = "/user")	
 public class TestController {
 	
 	public TestController() {
 	}
 	
-	@Do(method = HttpMethod.POST, contentType  = MediaType.APPLICATION_JSON, path = "/image/{imageId}")
+	@Do(method = HttpMethod.POST, contentType  = MediaType.APPLICATION_JSON, path = "/")
 	@ResponseStatus(status = HttpStatus.OK)
-	public User post(@Payload User user ,
-			@PathVariable(name = "userId") String userId,
-			@PathVariable(name = "imageId") String imageId ) {
+	public User createUser(@Payload User user ) {
 		return new User(1L, user.getName(), user.getPassword());
 	}
 	
-	@Do(method = HttpMethod.GET, contentType  = MediaType.APPLICATION_JSON, path = "/detalhes")
+	@Do(method = HttpMethod.GET, contentType  = MediaType.APPLICATION_JSON, path = "/{userId}/image/{imageId}")
+	@ResponseStatus(status = HttpStatus.OK)
+	public Imagem getImage(
+			@PathVariable(name = "userId") String userId,
+			@PathVariable(name = "imageId") String imageId ) {
+		return new User(1L, "fakename", "fakepass").adicionaImagem();
+	}
+	
+	
+	@Do(method = HttpMethod.GET, contentType  = MediaType.APPLICATION_JSON, path = "/lista")
 	@ResponseStatus(status = HttpStatus.OK)
 	public List<User> lista(
 			@PathVariable(name = "userId") String userId,
@@ -42,7 +49,7 @@ public class TestController {
 				new User(1L, "12312", "123"));
 	}
 	
-	@Do(method = HttpMethod.GET, contentType  = MediaType.APPLICATION_JSON, path = "/")
+	@Do(method = HttpMethod.GET, contentType  = MediaType.APPLICATION_JSON, path = "/{userId}")
 	public ResponseEntity<User> get(){
 		User user = new User(1L, "teste", "teste");
 		return new ResponseEntity<User>(HttpStatus.OK, HttpHeaders.builder().contentType(MediaType.APPLICATION_JSON.getValue()).build(),user );

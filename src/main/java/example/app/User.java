@@ -4,7 +4,7 @@ public class User {
 	private Long id;
 	private String name;
 	private String password;
-	
+	private Imagem imagem;
 	public User() {
 	}
 	
@@ -24,5 +24,11 @@ public class User {
 		return password;
 	}
 	
+	public Imagem adicionaImagem() {
+		this.imagem = new Imagem();
+		this.imagem.id = 1L;
+		this.imagem.caminho = "http://fake.png";
+		return this.imagem;
+	}
 	
 }
