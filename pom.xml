@@ -12,9 +12,9 @@
 </properties>
   <dependencies>
   	<dependency>
-  		<groupId>com.isolate.framework</groupId>
+  		<groupId>simplehttp.framework</groupId>
   		<artifactId>web</artifactId>
-  		<version>0.0.1</version>
+  		<version>1.0.0</version>
   	</dependency>
   </dependencies>
 </project>
