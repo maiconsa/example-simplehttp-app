@@ -1,0 +1,181 @@
+{
+	"info": {
+		"_postman_id": "c88daebf-748a-4ea6-951f-14a728d423da",
+		"name": "simpleframework-example",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "createUser",
+			"protocolProfileBehavior": {
+				"disabledSystemHeaders": {
+					"connection": true,
+					"accept-encoding": true,
+					"user-agent": true,
+					"accept": true,
+					"host": true,
+					"content-type": true
+				},
+				"strictSSL": false
+			},
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json",
+						"type": "default"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"name\": \"fakename\",\n    \"password\": \"fakepass\"\n}"
+				},
+				"url": {
+					"raw": "http://localhost:9091/user/",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "9091",
+					"path": [
+						"user",
+						""
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "getImagem",
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true,
+				"disabledSystemHeaders": {
+					"content-type": true,
+					"connection": true,
+					"accept-encoding": true,
+					"user-agent": true,
+					"accept": true,
+					"host": true,
+					"content-length": true
+				},
+				"strictSSL": false
+			},
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json",
+						"type": "default"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\"name\": \"fakename\",\"password\": \"fakepass\"}"
+				},
+				"url": {
+					"raw": "http://localhost:9091/user/1/image/1",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "9091",
+					"path": [
+						"user",
+						"1",
+						"image",
+						"1"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "all",
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true,
+				"disabledSystemHeaders": {
+					"content-type": true,
+					"connection": true,
+					"accept-encoding": true,
+					"user-agent": true,
+					"accept": true,
+					"host": true,
+					"content-length": true
+				},
+				"strictSSL": false
+			},
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json",
+						"type": "default"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": ""
+				},
+				"url": {
+					"raw": "http://localhost:9091/user/",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "9091",
+					"path": [
+						"user",
+						""
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "getUser",
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true,
+				"disabledSystemHeaders": {
+					"content-type": true,
+					"connection": true,
+					"accept-encoding": true,
+					"user-agent": true,
+					"accept": true,
+					"host": true,
+					"content-length": true
+				},
+				"strictSSL": false
+			},
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json",
+						"type": "default"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": ""
+				},
+				"url": {
+					"raw": "http://localhost:9091/user/",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "9091",
+					"path": [
+						"user",
+						""
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}
