@@ -36,10 +36,9 @@ public class TestController {
 	}
 	
 	
-	@Do(method = HttpMethod.GET, contentType  = MediaType.APPLICATION_JSON, path = "/lista")
+	@Do(method = HttpMethod.GET, contentType  = MediaType.APPLICATION_JSON, path = "/")
 	@ResponseStatus(status = HttpStatus.OK)
 	public List<User> lista(
-			@PathVariable(name = "userId") String userId,
 			@Header(name = HttpHeaders.CONTENT_LEGNTH) String length,
 			@Header(name = HttpHeaders.CONTENT_TYPE) String contentType,
 			@QueryParameter(name = "dataCriacao") String dataCriacao
